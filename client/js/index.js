@@ -3,9 +3,9 @@ getHelloData();
 async function getHelloData() {
     const response = await fetch("http://localhost:3000/hello");
     const data = await response.json();
-    
+    let msg = _.join(['Greetings: ', data.message], ' ');
     let htmlContent = `
-        <h1>${data.message}</h1>
+        <h1>${msg}</h1>
     `
     $("#main-container").html(htmlContent);
 }    
